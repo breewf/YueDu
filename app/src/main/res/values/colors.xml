@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#689F38</color>
+    <color name="actionbar_color">#689F38</color>
+    <color name="green">#689F38</color>
+    <color name="red">#FF0000</color>
+    <color name="blue">#2196F3</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="gray0">#F0F0F0</color>
+    <color name="gray1">#cccccc</color>
+    <color name="gray2">#c0c0c0</color>
+    <color name="gray3">#999999</color>
+    <color name="gray4">#808080</color>
+    <color name="gray5">#666666</color>
+    <color name="gray6">#333333</color>
+
+    <array name="progress_colors">
+        <item>#FFFF0000</item>
+        <item>#FF689F38</item>
+        <item>#FF2196F3</item>
+        <item>#FF999999</item>
+    </array>
+    <array name="in_colors">
+        <item>#FFB5D4FF</item>
+        <item>#FFDEEAFC</item>
+        <item>#FFFAFFFE</item>
+    </array>
+
+    <color name="read_bg1">#FCEAA7</color>
+    <color name="read_bg3">#C8E5DB</color>
+    <color name="read_bg4">#BBFFFF</color>
+    <color name="read_bg8">#FAD8A6</color>
+    <color name="read_bg9">#F3E9CB</color>
+    <color name="read_bg10">#C8C9BE</color>
+    <color name="read_bg11">#DDFFFF</color>
+    <color name="read_bg12">#FEFFB8</color>
+    <color name="read_bg14">#E9F59C</color>
+    <color name="read_bg15">#CFD9FF</color>
+    <color name="read_bg16">#D0D0BB</color>
+    <color name="read_bg17">#D4B7E0</color>
+    <color name="read_bg18">#FFE0FF</color>
+    <color name="read_bg19">#DDCFCF</color>
+
+</resources>

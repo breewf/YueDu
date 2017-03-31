@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/margin_20"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10"
+        android:text="进入动画设置"
+        android:textColor="@color/gray4"
+        android:textStyle="bold"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_6"
+        android:background="@color/gray2" />
+
+    <Button
+        android:id="@+id/set_btn_anim_in_set15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_selector_color1"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_14"
+        android:text="淡入"
+        android:textColor="@color/gray4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray2"
+        android:layout_marginLeft="@dimen/margin_14"
+        android:layout_marginRight="@dimen/margin_14"></View>
+
+    <Button
+        android:id="@+id/set_btn_anim_in_set1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_selector_color1"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_14"
+        android:text="中间向外缩放（默认）"
+        android:textColor="@color/gray4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray2"
+        android:layout_marginLeft="@dimen/margin_14"
+        android:layout_marginRight="@dimen/margin_14"></View>
+
+    <Button
+        android:id="@+id/set_btn_anim_in_set2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_selector_color1"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_14"
+        android:text="中间向外缩放+旋转"
+        android:textColor="@color/gray4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray2"
+        android:layout_marginLeft="@dimen/margin_14"
+        android:layout_marginRight="@dimen/margin_14"></View>
+
+    <Button
+        android:id="@+id/set_btn_anim_in_set3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_selector_color1"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_14"
+        android:text="从左下角出现"
+        android:textColor="@color/gray4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray2"
+        android:layout_marginLeft="@dimen/margin_14"
+        android:layout_marginRight="@dimen/margin_14"></View>
+
+    <Button
+        android:id="@+id/set_btn_anim_in_set4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_selector_color1"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_14"
+        android:text="从右下角出现"
+        android:textColor="@color/gray4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray2"
+        android:layout_marginLeft="@dimen/margin_14"
+        android:layout_marginRight="@dimen/margin_14"></View>
+
+    <Button
+        android:id="@+id/set_btn_anim_in_set5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_selector_color1"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_14"
+        android:text="从左上角出现"
+        android:textColor="@color/gray4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray2"
+        android:layout_marginLeft="@dimen/margin_14"
+        android:layout_marginRight="@dimen/margin_14"></View>
+
+    <Button
+        android:id="@+id/set_btn_anim_in_set6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_selector_color1"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_14"
+        android:text="从右上角出现"
+        android:textColor="@color/gray4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray2"
+        android:layout_marginLeft="@dimen/margin_14"
+        android:layout_marginRight="@dimen/margin_14"></View>
+
+    <Button
+        android:id="@+id/set_btn_anim_in_set7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_selector_color1"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_14"
+        android:text="从底部出现"
+        android:textColor="@color/gray4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray2"
+        android:layout_marginLeft="@dimen/margin_14"
+        android:layout_marginRight="@dimen/margin_14"></View>
+
+    <Button
+        android:id="@+id/set_btn_anim_in_set8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_selector_color1"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_14"
+        android:text="从左侧出现"
+        android:textColor="@color/gray4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray2"
+        android:layout_marginLeft="@dimen/margin_14"
+        android:layout_marginRight="@dimen/margin_14"></View>
+
+    <Button
+        android:id="@+id/set_btn_anim_in_set9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_selector_color1"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_14"
+        android:text="从右侧出现"
+        android:textColor="@color/gray4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray2"
+        android:layout_marginLeft="@dimen/margin_14"
+        android:layout_marginRight="@dimen/margin_14"></View>
+
+    <Button
+        android:id="@+id/set_btn_anim_in_set10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_selector_color1"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_14"
+        android:text="从上方出现"
+        android:textColor="@color/gray4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray2"
+        android:layout_marginLeft="@dimen/margin_14"
+        android:layout_marginRight="@dimen/margin_14"></View>
+
+    <Button
+        android:id="@+id/set_btn_anim_in_set11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_selector_color1"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_14"
+        android:text="从底部缩放出现"
+        android:textColor="@color/gray4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray2"
+        android:layout_marginLeft="@dimen/margin_14"
+        android:layout_marginRight="@dimen/margin_14"></View>
+
+    <Button
+        android:id="@+id/set_btn_anim_in_set12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_selector_color1"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_14"
+        android:text="从左侧缩放出现"
+        android:textColor="@color/gray4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray2"
+        android:layout_marginLeft="@dimen/margin_14"
+        android:layout_marginRight="@dimen/margin_14"></View>
+
+    <Button
+        android:id="@+id/set_btn_anim_in_set13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_selector_color1"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_14"
+        android:text="从右侧缩放出现"
+        android:textColor="@color/gray4" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gray2"
+        android:layout_marginLeft="@dimen/margin_14"
+        android:layout_marginRight="@dimen/margin_14"></View>
+
+    <Button
+        android:id="@+id/set_btn_anim_in_set14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_bg_selector_color1"
+        android:gravity="center_vertical"
+        android:padding="@dimen/padding_14"
+        android:text="从上方缩放出现"
+        android:textColor="@color/gray4" />
+
+</LinearLayout>

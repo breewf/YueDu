@@ -1,0 +1,194 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/toolbar"></include>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/set_help_btn1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_bg_selector_color2"
+                        android:gravity="center_vertical"
+                        android:onClick="setHelpBtnClick"
+                        android:padding="@dimen/padding_10"
+                        android:text="1.问：你这个软件是干啥的？"
+                        android:textColor="@color/gray4" />
+
+                    <TextView
+                        android:id="@+id/set_tv_help1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding_10"
+                        android:text="大湿：文艺小清新阅读类APP，这个解释您满意吗？"
+                        android:textColor="@color/gray4"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/set_help_btn2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_bg_selector_color2"
+                        android:gravity="center_vertical"
+                        android:onClick="setHelpBtnClick"
+                        android:padding="@dimen/padding_10"
+                        android:text="2.问：⊙﹏⊙ 到底是干啥用的？"
+                        android:textColor="@color/gray4" />
+
+                    <TextView
+                        android:id="@+id/set_tv_help2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding_10"
+                        android:text="大湿：使用本软件可以看看文章，陶冶陶冶情操；看看新闻，知晓一些新鲜事；看看段子，轻松一刻；看看图片，感受美好；看看经典名言、哲理句子，提高品位。还有视频、音频等你发掘，怎样？感觉是不是很不错！哎，都是忽悠~"
+                        android:textColor="@color/gray4"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/set_help_btn3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_bg_selector_color2"
+                        android:gravity="center_vertical"
+                        android:onClick="setHelpBtnClick"
+                        android:padding="@dimen/padding_10"
+                        android:text="3.问：如何使用这个软件？"
+                        android:textColor="@color/gray4" />
+
+                    <TextView
+                        android:id="@+id/set_tv_help3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding_10"
+                        android:text="大湿：首先你得先打开本软件，然后确保您的网络可用，再然后选择您感兴趣的内容点击浏览即可。Just so easy! You can do it!"
+                        android:textColor="@color/gray4"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/set_help_btn4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_bg_selector_color2"
+                        android:gravity="center_vertical"
+                        android:onClick="setHelpBtnClick"
+                        android:padding="@dimen/padding_10"
+                        android:text="4.问：为什么无法连接到网络？"
+                        android:textColor="@color/gray4" />
+
+                    <TextView
+                        android:id="@+id/set_tv_help4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding_10"
+                        android:text="大湿：1.可能您的手机本身就没有连接网络，请检查您的网络设置。2.可能您的网速较慢，请稍后再试或者连接到一个网速较快的网络。3.可能在您的设置项中开启了仅WIFI连接，而您当前在移动网络环境下，请去设置页面中更改您的设置。"
+                        android:textColor="@color/gray4"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/set_help_btn5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_bg_selector_color2"
+                        android:gravity="center_vertical"
+                        android:onClick="setHelpBtnClick"
+                        android:padding="@dimen/padding_10"
+                        android:text="5.问：主题颜色不好看怎么办？"
+                        android:textColor="@color/gray4" />
+
+                    <TextView
+                        android:id="@+id/set_tv_help5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding_10"
+                        android:text="大湿：您可以在应用主界面点击“悦读”二字左侧的菜单键或者在主界面从屏幕左侧边缘向右滑动来打开侧滑菜单，菜单栏倒数第三项有系统颜色设置哦，可自定义您喜欢的颜色。主题颜色天天换，今天颜色大不同。"
+                        android:textColor="@color/gray4"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_10"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/set_help_btn6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/btn_bg_selector_color2"
+                        android:gravity="center_vertical"
+                        android:onClick="setHelpBtnClick"
+                        android:padding="@dimen/padding_10"
+                        android:text="6.问：为什么总是显示服务器无数据？"
+                        android:textColor="@color/gray4" />
+
+                    <TextView
+                        android:id="@+id/set_tv_help6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/padding_10"
+                        android:text="大湿：1.本软件会获取您的系统日期来和服务器数据作对比，请确保您的系统日期是当前正确的日期哦！2.由于本软件由个人维护，精力难免不够了呢，可能服务器上真的没有更新数据呢，抱歉！"
+                        android:textColor="@color/gray4"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <include layout="@layout/layout_floating_action_button"></include>
+
+</RelativeLayout>

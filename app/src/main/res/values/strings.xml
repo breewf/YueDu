@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">悦读</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">设置</string>
+    <string name="action_exit">退出</string>
+    <string name="action_test">测试页面</string>
+    <string name="drawer_open">drawer_open</string>
+    <string name="drawer_close">drawer_close</string>
+    <string name="title_activity_lead">LeadActivity</string>
+    <string name="title_activity_launch">LaunchActivity</string>
+    <string name="title_activity_set">SetActivity</string>
+    <string name="title_activity_news">NewsActivity</string>
+    <string name="title_activity_article">ArticleActivity</string>
+    <string name="title_activity_joke">JokeActivity</string>
+    <string name="title_activity_music">MusicActivity</string>
+    <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_help">HelpActivity</string>
+    <string name="title_activity_advice">AdviceActivity</string>
+    <string name="tv_about">关于悦读\n\n1.悦读（以下称之为“本软件”）是安卓端互联网应用软件，使用本软件可以阅读文章、新闻、段子，或是浏览图片、听音频、看视频等。使用本软件即代表您同意以下用户许可协议，如果您不同意，请勿使用本软件！
+    \n\n1).本软件使用过程中会连接互联网络，由此产生的流量费完全由用户个人承担。您可以在设置项中选择关闭您的移动网络连接，仅在WIFI环境下连接网络，但这样您可能无法正常使用本软件。
+    \n\n2).为保证用户体验，本软件使用了相应用户权限，比如监听您的网络状态、读取您的SD卡文件信息等。所有这些都与用户隐私无关，本软件也不会搜集任何有关用户隐私的内容，请悉知。
+    \n\n3).本软件不保证兼容所有的安卓设备，如果无法兼容您的设备，请卸载本软件。如果您不愿意卸载本软件，但由此带来的风险完全由用户承担。如果您愿意，可以在意见反馈页面进行问题反馈。
+    \n\n4).本软件最终解释权归作者所有。
+    \n\n2.本软件在开发过程中使用了开源项目，对安卓开源精神和各路开源大神表示感谢。
+    \n\n3.由于本软件为个人开发，没有强大的幕后团队，以致本软件所使用的素材收集于互联网或其它途径，若有侵权，请告知。
+    \n\n4.本软件使用了Bmob移动后端云服务，在此表示感谢！
+    \n\n5.本软件数据来自互联网或可能来自星星的你，若有侵犯，请告知。
+    \n\n6.如果您喜欢本软件，可以推荐给您的好友使用，在此谢过。
+    \n\n7.如果您不喜欢本软件，试着去喜欢。
+    \n\n8.喜欢就好，不喜欢拉到。
+    \n\n9.O(∩_∩)O~  O(∩_∩)O~</string>
+    <string name="title_activity_video">VideoActivity</string>
+    <string name="title_activity_scroll_view_toolbar_with_image">
+        ScrollViewToolbarWithImageActivity
+    </string>
+    <string name="title_activity_scroll_view_toolbar">ScrollViewToolbarActivity</string>
+    <string name="title_activity_anim_set">AnimSetActivity</string>
+    <string name="title_activity_anim_test">AnimTestActivity</string>
+    <string name="title_activity_user_login">UserLoginActivity</string>
+    <string name="title_activity_picture_show">PictureShowActivity</string>
+</resources>

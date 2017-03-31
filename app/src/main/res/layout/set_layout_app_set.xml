@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_20"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:textSize="16sp"
+            android:textColor="@color/gray4"
+            android:textStyle="bold"
+            android:text="应用设置"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/margin_6"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_marginRight="@dimen/margin_10"
+            android:background="@color/gray2"></LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/set_btn_app_set1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg_selector_color1"
+            android:gravity="center_vertical"
+            android:padding="@dimen/padding_14"
+            android:text="检查更新"
+            android:textColor="@color/gray4" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="@dimen/margin_14"
+            android:layout_marginRight="@dimen/margin_14"
+            android:background="@color/gray2"></View>
+
+        <RelativeLayout
+            android:id="@+id/set_app_layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_bg_selector_color1">
+
+            <TextView
+                android:id="@+id/set_app_tui_tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_14"
+                android:textColor="@color/gray4"
+                android:text="允许推送"/>
+
+            <com.rey.material.widget.Switch
+                android:id="@+id/set_app_switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/margin_10"
+                android:padding="@dimen/padding_14"/>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="@dimen/margin_14"
+            android:layout_marginRight="@dimen/margin_14"
+            android:background="@color/gray2"></View>
+
+        <Button
+            android:id="@+id/set_btn_app_set3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg_selector_color1"
+            android:gravity="center_vertical"
+            android:padding="@dimen/padding_14"
+            android:text="页面切换动画效果"
+            android:textColor="@color/gray4" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="@dimen/margin_14"
+            android:layout_marginRight="@dimen/margin_14"
+            android:background="@color/gray2"></View>
+
+        <Button
+            android:id="@+id/set_btn_app_set2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_bg_selector_color1"
+            android:gravity="center_vertical"
+            android:padding="@dimen/padding_14"
+            android:text="恢复默认灰色主题（重启生效）"
+            android:tag="#999999"
+            android:textColor="@color/gray4" />
+
+    </LinearLayout>
+
+</LinearLayout>

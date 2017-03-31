@@ -1,0 +1,93 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <include layout="@layout/toolbar"></include>
+
+        <android.support.v4.widget.DrawerLayout
+            android:id="@+id/drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- 主界面布局-->
+            <RelativeLayout
+                android:id="@+id/main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/layout_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <it.neokree.materialtabs.MaterialTabHost
+                    android:id="@+id/tabHost"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:accentColor="#ffffff"
+                    app:primaryColor="#689F38" />
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+                <!-- 服务器无当日数据时的提醒-->
+                <LinearLayout
+                    android:id="@+id/layout_no_data_remind"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:visibility="gone"
+                    android:layout_centerInParent="true">
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@mipmap/icon_cry_2"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray2"
+                        android:text="抱歉！未查询到数据"
+                        android:layout_marginTop="@dimen/margin_4"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <!-- The drawerLayout侧滑菜单布局 -->
+            <RelativeLayout
+                android:id="@+id/drawer_content"
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:background="@android:color/white">
+
+                <include layout="@layout/layout_drawer_layout"></include>
+
+            </RelativeLayout>
+
+        </android.support.v4.widget.DrawerLayout>
+
+    </LinearLayout>
+
+    <!-- 底部snack_bar提示信息布局-->
+    <include layout="@layout/layout_snack_bar"></include>
+
+</RelativeLayout>
+
+

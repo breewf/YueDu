@@ -1,0 +1,131 @@
+<resources>
+
+    <!-- App Style start-->
+    <style name="AppTheme" parent="AppBaseTheme" />
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="android:windowBackground">@color/white</item>
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryDark">@color/green</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+
+    </style>
+    <!-- App Style end-->
+
+    <!-- FloatingActionButton Style start-->
+
+    <style name="FloatingActionButton" parent="Material.Drawable.Ripple.Touch.Light">
+        <item name="fab_backgroundColor">#FFDFDFDF</item>
+        <item name="fab_elevation">4dp</item>
+        <item name="fab_iconLineMorphing">@style/FloatingActionButtonIcon.Light</item>
+    </style>
+
+    <style name="FloatingColorActionButton" parent="Material.Drawable.Ripple.Touch.Light">
+        <item name="rd_rippleColor">#33000000</item>
+        <item name="fab_backgroundColor">#FF2196F3</item>
+        <item name="fab_elevation">4dp</item>
+        <item name="fab_iconLineMorphing">@style/FloatingActionButtonIcon</item>
+    </style>
+
+    <style name="FloatingWaveActionButton" parent="Material.Drawable.Ripple.Wave.Light">
+        <item name="fab_backgroundColor">#FFDFDFDF</item>
+        <item name="fab_elevation">4dp</item>
+        <item name="fab_iconLineMorphing">@style/FloatingActionButtonIcon.Light</item>
+    </style>
+
+    <style name="FloatingActionButtonIcon.Light" parent="FloatingActionButtonIcon">
+        <item name="lmd_strokeColor">#FF000000</item>
+    </style>
+
+    <style name="FloatingWaveColorActionButton" parent="Material.Drawable.Ripple.Wave.Light">
+        <item name="rd_rippleColor">#33000000</item>
+        <item name="fab_backgroundColor">#FF2196F3</item>
+        <item name="fab_elevation">4dp</item>
+        <item name="fab_iconLineMorphing">@style/FloatingActionButtonIcon</item>
+    </style>
+
+    <style name="FloatingActionButtonIcon">
+        <item name="lmd_state">@xml/fab_icon_states</item>
+        <item name="lmd_curState">0</item>
+        <item name="lmd_padding">2dp</item>
+        <item name="lmd_animDuration">400</item>
+        <item name="lmd_interpolator">@android:anim/accelerate_decelerate_interpolator</item>
+        <item name="lmd_strokeSize">3dp</item>
+        <item name="lmd_strokeColor">#FFFFFFFF</item>
+        <item name="lmd_strokeCap">butt</item>
+        <item name="lmd_strokeJoin">miter</item>
+        <item name="lmd_clockwise">true</item>
+    </style>
+
+    <!-- FloatingActionButton Style end-->
+
+    <!-- SnackBar Style -->
+
+    <style name="SnackBarSingleLine" parent="Material.Widget.SnackBar.Mobile"></style>
+
+    <style name="SnackBarMultiLine" parent="Material.Widget.SnackBar.Mobile.MultiLine"></style>
+
+    <!-- Progress Style -->
+
+    <style name="CircularProgressDrawableStyle" parent="Material.Drawable.CircularProgress" />
+
+    <style name="ColorsCircularProgressDrawableStyle" parent="Material.Drawable.CircularProgress">
+        <item name="cpd_strokeColors">@array/progress_colors</item>
+    </style>
+
+    <style name="InOutCircularProgressDrawableStyle" parent="Material.Drawable.CircularProgress">
+        <item name="cpd_inAnimDuration">800</item>
+        <item name="cpd_inStepPercent">0.5</item>
+        <item name="cpd_inStepColors">@array/in_colors</item>
+        <item name="cpd_outAnimDuration">400</item>
+    </style>
+
+    <style name="InOutColorsCircularProgressDrawableStyle" parent="Material.Drawable.CircularProgress">
+        <item name="cpd_inAnimDuration">800</item>
+        <item name="cpd_inStepPercent">0.5</item>
+        <item name="cpd_inStepColors">@array/in_colors</item>
+        <item name="cpd_outAnimDuration">400</item>
+        <item name="cpd_strokeColors">@array/progress_colors</item>
+    </style>
+
+    <style name="LinearProgressDrawableStyle" parent="Material.Drawable.LinearProgress">
+        <item name="lpd_strokeSecondaryColor">#00000000</item>
+    </style>
+
+    <style name="ColorsLinearProgressDrawableStyle" parent="Material.Drawable.LinearProgress">
+        <item name="lpd_strokeColors">@array/progress_colors</item>
+        <item name="lpd_strokeSecondaryColor">#00000000</item>
+    </style>
+
+    <style name="DeterminateLinearProgressDrawableStyle" parent="Material.Drawable.LinearProgress.Determinate">
+        <item name="lpd_strokeColor">#FF689F38</item>
+        <item name="lpd_strokeSecondaryColor">#FFC0C0C0</item>
+    </style>
+
+    <style name="BufferLinearProgressDrawableStyle" parent="Material.Drawable.LinearProgress.Buffer">
+        <item name="lpd_strokeColor">#FF689F38</item>
+        <item name="lpd_strokeSecondaryColor">#FFC0C0C0</item>
+        <item name="lpd_travelDuration">400</item>
+        <item name="lpd_transformDuration">400</item>
+        <item name="lpd_keepDuration">100</item>
+    </style>
+
+
+    <!-- 自定义加载中样式-->
+    <style name="loading_dialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/shape_progressdialog</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <!-- PopupWindow窗口动画 -->
+    <style name="AnimationPopupWindow">
+        <item name="android:windowEnterAnimation">@anim/view_show_translate_scale_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/view_hide_translate_scale_to_bottom</item>
+    </style>
+
+
+</resources>
