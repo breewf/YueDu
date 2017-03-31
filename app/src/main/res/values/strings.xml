@@ -40,4 +40,6 @@
     <string name="title_activity_anim_test">AnimTestActivity</string>
     <string name="title_activity_user_login">UserLoginActivity</string>
     <string name="title_activity_picture_show">PictureShowActivity</string>
+
+    <string name="transition_scene_img">transition_scene_img</string>
 </resources>

@@ -1,7 +1,10 @@
 package com.ghy.yuedu.fragment;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.DisplayMetrics;
@@ -356,7 +359,15 @@ public class DayPictureFragment extends Fragment implements View.OnClickListener
             //全屏查看并下载
             Intent intent = new Intent(getActivity(), PictureShowActivity.class);
             intent.putExtra("picUrl", getPicUrl);
-            startActivity(intent);
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                ActivityOptionsCompat options =
+                        ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(),
+                                iv_day_pic, getString(R.string.transition_scene_img));
+                ActivityCompat.startActivity(getActivity(), intent, options.toBundle());
+            } else {
+                startActivity(intent);
+            }
         } else {
             showToast("出现未知错误");
         }

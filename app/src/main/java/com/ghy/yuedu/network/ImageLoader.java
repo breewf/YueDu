@@ -18,7 +18,7 @@ public class ImageLoader {
 
     private BitmapUtils bitmapUtils;
     public Context mContext;
-    public static int loadImageStatus=0;
+    public static int loadImageStatus = 0;
 
     public ImageLoader(Context mContext) {
 
@@ -36,7 +36,7 @@ public class ImageLoader {
         @Override
         public void onLoading(ImageView container, String uri,
                               BitmapDisplayConfig config, long total, long current) {
-            loadImageStatus=0;//正在加载图片
+            loadImageStatus = 0;//正在加载图片
 
         }
 
@@ -44,14 +44,14 @@ public class ImageLoader {
         public void onLoadCompleted(ImageView container, String uri,
                                     Bitmap bitmap, BitmapDisplayConfig config, BitmapLoadFrom from) {
             fadeInDisplay(container, bitmap);
-            loadImageStatus=1;//加载图片成功
+            loadImageStatus = 1;//加载图片成功
         }
 
         @Override
         public void onLoadFailed(ImageView container, String uri,
                                  Drawable drawable) {
             super.onLoadFailed(container, uri, drawable);
-            loadImageStatus=-1;//加载图片失败
+            loadImageStatus = -1;//加载图片失败
         }
 
         private final ColorDrawable TRANSPARENT_DRAWABLE = new ColorDrawable(

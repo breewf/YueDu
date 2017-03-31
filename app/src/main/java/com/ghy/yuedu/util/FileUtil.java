@@ -16,9 +16,9 @@ import java.io.IOException;
  */
 public class FileUtil {
 
-    private static String SDCardRoot=null;//SD卡根目录
-    private static String YueDuRootPath=null;//YueDu文件夹根目录
-    private static String FolderPath=null;//YueDu文件夹子目录
+    private static String SDCardRoot = null;//SD卡根目录
+    private static String YueDuRootPath = null;//YueDu文件夹根目录
+    private static String FolderPath = null;//YueDu文件夹子目录
 
     /*
     * 创建文件夹
@@ -29,7 +29,7 @@ public class FileUtil {
             if (!dirFile.exists()) {
                 dirFile.mkdirs();
             }
-            FolderPath=dirFile+File.separator;// SDCard/.../YueDu/filePath/
+            FolderPath = dirFile + File.separator;// SDCard/.../YueDu/filePath/
         }
         return FolderPath;
     }
@@ -38,11 +38,11 @@ public class FileUtil {
     * 创建一个YueDu根目录
     * */
     private static String createRootPath() {
-        File rootFile=new File(getSDCardRoot()+"YueDu");// SDCard/.../YueDu
-        if (!rootFile.exists()){
+        File rootFile = new File(getSDCardRoot() + "YueDu");// SDCard/.../YueDu
+        if (!rootFile.exists()) {
             rootFile.mkdirs();
         }
-        YueDuRootPath=rootFile+File.separator;// SDCard/.../YueDu/
+        YueDuRootPath = rootFile + File.separator;// SDCard/.../YueDu/
         return YueDuRootPath;
     }
 
@@ -52,7 +52,7 @@ public class FileUtil {
     public static File createFile(String path, String fileName) {
         File file = null;
         if (createFilePath(path) != null) {
-            file = new File(FolderPath+fileName);
+            file = new File(FolderPath + fileName);
             if (!file.exists()) {
                 try {
                     file.createNewFile();
@@ -65,7 +65,7 @@ public class FileUtil {
     }
 
     private static boolean isSDCardExist() {
-        return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED) ? true : false;
+        return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
     }
 
     private static String getSDCardRoot() {
@@ -75,11 +75,11 @@ public class FileUtil {
     /*
     * 向文件中写入数据
     * */
-    public static boolean writeDataToFile(String folderPath,String fileName,String s){
+    public static boolean writeDataToFile(String folderPath, String fileName, String s) {
 
-        File file=createFile(folderPath,fileName);// SDCard/.../YueDu/Cache/jsonCache.txt
+        File file = createFile(folderPath, fileName);// SDCard/.../YueDu/Cache/jsonCache.txt
 
-        if (file==null || s==null){
+        if (file == null || s == null) {
             return false;
         }
 
@@ -92,8 +92,8 @@ public class FileUtil {
             bw.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            if (bw!=null){
+        } finally {
+            if (bw != null) {
                 try {
                     bw.flush();
                     bw.close();
@@ -108,16 +108,16 @@ public class FileUtil {
     /*
     * 从文件中读取数据
     * */
-    public static String readDataFromFile(String folderPath,String fileName){
+    public static String readDataFromFile(String folderPath, String fileName) {
 
-        File file=createFile(folderPath,fileName);// SDCard/.../YueDu/Cache/jsonCache.txt
+        File file = createFile(folderPath, fileName);// SDCard/.../YueDu/Cache/jsonCache.txt
 
         StringBuffer sb = new StringBuffer();
         BufferedReader br;
         String line;
         try {
             br = new BufferedReader(new FileReader(file));
-            while((line = br.readLine())!=null){
+            while ((line = br.readLine()) != null) {
                 sb.append(line);
             }
             br.close();
@@ -131,16 +131,16 @@ public class FileUtil {
     * 升级时需要获取apk安装包的大小
     * 把apk安装包放到手机SD卡根目录下，执行此方法，查看log获取
     * */
-    public static void getYueDuApkSize(){
-        String path=Environment.getExternalStorageDirectory()+File.separator+"YueDu1.1.apk";
+    public static void getYueDuApkSize() {
+        String path = Environment.getExternalStorageDirectory() + File.separator + "YueDu1.1.apk";
 
-        File file=new File(path);
+        File file = new File(path);
 
-        if (file.exists()){
-            long size=file.length();
-            Log.i("apkSize---->>>>",size+"");
-        }else {
-            Log.i("apkSize---->>>>","Not find Apk");
+        if (file.exists()) {
+            long size = file.length();
+            Log.i("apkSize---->>>>", size + "");
+        } else {
+            Log.i("apkSize---->>>>", "Not find Apk");
         }
     }
 }

@@ -13,6 +13,12 @@
     </style>
     <!-- App Style end-->
 
+    <style name="ThemeTranslucent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
     <!-- FloatingActionButton Style start-->
 
     <style name="FloatingActionButton" parent="Material.Drawable.Ripple.Touch.Light">
