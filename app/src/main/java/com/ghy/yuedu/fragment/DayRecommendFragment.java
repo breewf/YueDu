@@ -1,7 +1,10 @@
 package com.ghy.yuedu.fragment;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.DisplayMetrics;
@@ -41,6 +44,7 @@ import cn.bmob.v3.listener.FindListener;
 public class DayRecommendFragment extends Fragment implements View.OnClickListener {
 
     public static DayRecommendFragment DRFInstance;
+
     public DayRecommendFragment newInstance() {
         DayRecommendFragment dayRecommendFragment = new DayRecommendFragment();
         return dayRecommendFragment;
@@ -106,7 +110,7 @@ public class DayRecommendFragment extends Fragment implements View.OnClickListen
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        DRFInstance=this;
+        DRFInstance = this;
         initSwipeRefreshLayout();
 
         //先加载本地的期刊数，无网络时，使用本地的期刊数
@@ -135,10 +139,10 @@ public class DayRecommendFragment extends Fragment implements View.OnClickListen
     }
 
     private void QueryDate() {
-        
+
         //加载中动画
         MyLoadingDialog.createLoadingDialog(getActivity(), "加载中，请稍后").show();
-        
+
         //获取当天日期
         getDate = getDate();
         //查询当天日期有无数据
@@ -426,15 +430,22 @@ public class DayRecommendFragment extends Fragment implements View.OnClickListen
 
     @Override
     public void onClick(View view) {
-        int id=view.getId();
-        if (id==R.mipmap.image_load_error){
+        int id = view.getId();
+        if (id == R.mipmap.image_load_error) {
             //说明加载图片失败，点击重新加载
             displayImageView(getPicUrl);
-        }else {
+        } else {
             //全屏查看并下载
-            Intent intent=new Intent(getActivity(),PictureShowActivity.class);
-            intent.putExtra("picUrl",getPicUrl);
-            startActivity(intent);
+            Intent intent = new Intent(getActivity(), PictureShowActivity.class);
+            intent.putExtra("picUrl", getPicUrl);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                ActivityOptionsCompat options =
+                        ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(),
+                                iv_day_recommend_pic, getString(R.string.transition_scene_img));
+                ActivityCompat.startActivity(getActivity(), intent, options.toBundle());
+            } else {
+                startActivity(intent);
+            }
         }
 
     }
@@ -442,7 +453,7 @@ public class DayRecommendFragment extends Fragment implements View.OnClickListen
     /*
     * 更换背景
     * */
-    public void changBg(int bgId){
+    public void changBg(int bgId) {
         layout_day_rec.setBackgroundColor(bgId);
     }
 }
