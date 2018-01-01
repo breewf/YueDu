@@ -4,7 +4,7 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <include layout="@layout/toolbar"></include>
+    <include layout="@layout/toolbar"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -12,7 +12,8 @@
         android:padding="@dimen/padding_10"
         android:text="点击预览动画效果，长按设置动画效果"
         android:textColor="@color/red"
-        android:textSize="16sp" />
+        android:textStyle="bold"
+        android:textSize="14sp" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,9 +24,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <include layout="@layout/set_layout_anim_in"></include>
+            <include layout="@layout/set_layout_anim_in"/>
 
-            <include layout="@layout/set_layout_anim_out"></include>
+            <include layout="@layout/set_layout_anim_out"/>
 
         </LinearLayout>
 

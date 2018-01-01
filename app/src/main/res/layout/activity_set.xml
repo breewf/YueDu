@@ -16,20 +16,23 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <include layout="@layout/set_layout_network"></include>
+                <include layout="@layout/set_layout_network"/>
 
-                <include layout="@layout/set_layout_app_set"></include>
+                <include layout="@layout/set_layout_app_set"/>
 
-                <include layout="@layout/set_layout_look"></include>
+                <include layout="@layout/set_layout_look"/>
 
-                <include layout="@layout/set_layout_other"></include>
+                <include layout="@layout/set_layout_other"/>
 
             </LinearLayout>
+
         </ScrollView>
+
     </LinearLayout>
 
-    <include layout="@layout/layout_snack_bar"></include>
+    <include layout="@layout/layout_snack_bar"/>
+
 </RelativeLayout>

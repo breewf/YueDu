@@ -46,7 +46,7 @@
             android:layout_marginLeft="@dimen/margin_4"
             android:layout_marginRight="@dimen/margin_4"
             android:layout_marginTop="@dimen/margin_4"
-            android:background="@color/gray2"></View>
+            android:background="@color/gray2"/>
 
         <ScrollView
             android:layout_width="match_parent"
@@ -55,7 +55,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -76,13 +76,6 @@
                         android:text="新闻"
                         android:textColor="@color/gray4" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_marginLeft="@dimen/margin_10"
-                        android:layout_marginRight="@dimen/margin_40"
-                        android:background="@color/gray2"></View>
-
                     <Button
                         android:id="@+id/drawer_btn_article"
                         android:layout_width="match_parent"
@@ -95,13 +88,6 @@
                         android:padding="@dimen/padding_10"
                         android:text="文章"
                         android:textColor="@color/gray4" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_marginLeft="@dimen/margin_10"
-                        android:layout_marginRight="@dimen/margin_40"
-                        android:background="@color/gray2"></View>
 
                     <Button
                         android:id="@+id/drawer_btn_joke"
@@ -116,13 +102,6 @@
                         android:text="段子"
                         android:textColor="@color/gray4" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_marginLeft="@dimen/margin_10"
-                        android:layout_marginRight="@dimen/margin_40"
-                        android:background="@color/gray2"></View>
-
                     <Button
                         android:id="@+id/drawer_btn_music"
                         android:layout_width="match_parent"
@@ -135,13 +114,6 @@
                         android:padding="@dimen/padding_10"
                         android:text="音乐"
                         android:textColor="@color/gray4" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_marginLeft="@dimen/margin_10"
-                        android:layout_marginRight="@dimen/margin_40"
-                        android:background="@color/gray2"></View>
 
                     <Button
                         android:id="@+id/drawer_btn_video"
@@ -165,7 +137,7 @@
                     android:layout_marginLeft="@dimen/margin_4"
                     android:layout_marginRight="@dimen/margin_4"
                     android:layout_marginTop="@dimen/margin_4"
-                    android:background="@color/gray2"></View>
+                    android:background="@color/gray2"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -186,13 +158,6 @@
                         android:text="主题颜色"
                         android:textColor="@color/gray4" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_marginLeft="@dimen/margin_10"
-                        android:layout_marginRight="@dimen/margin_40"
-                        android:background="@color/gray2"></View>
-
                     <Button
                         android:id="@+id/drawer_btn_set"
                         android:layout_width="match_parent"
@@ -205,13 +170,6 @@
                         android:padding="@dimen/padding_10"
                         android:text="系统设置"
                         android:textColor="@color/gray4" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="0.5dp"
-                        android:layout_marginLeft="@dimen/margin_10"
-                        android:layout_marginRight="@dimen/margin_40"
-                        android:background="@color/gray2"></View>
 
                     <Button
                         android:id="@+id/drawer_btn_exit"
@@ -231,7 +189,6 @@
             </LinearLayout>
 
         </ScrollView>
-
 
     </LinearLayout>
 

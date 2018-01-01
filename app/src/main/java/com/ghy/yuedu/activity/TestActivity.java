@@ -1,5 +1,6 @@
 package com.ghy.yuedu.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import com.ghy.yuedu.util.ColorUtil;
 import com.ghy.yuedu.util.SystemBarUtil;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
+import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
 import com.rey.material.widget.FloatingActionButton;
 import com.rey.material.widget.ProgressView;
 import com.rey.material.widget.SnackBar;
@@ -27,7 +29,6 @@ import com.rey.material.widget.SnackBar;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class TestActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -74,7 +75,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     @ViewInject(R.id.main_sn2)
     SnackBar mSnackBar2;
 
-    boolean ProgressViewFlag=false;
+    boolean ProgressViewFlag = false;
     @ViewInject(R.id.progress_pv_linear)
     ProgressView progress_pv_linear;
     @ViewInject(R.id.progress_pv_linear_colors)
@@ -84,7 +85,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     ProgressView progress_pv_linear_determinate;
     @ViewInject(R.id.progress_pv_linear_buffer)
     ProgressView progress_pv_linear_buffer;
-    float progressSize=0f;
+    float progressSize = 0f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -178,6 +179,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+    @SuppressLint("HandlerLeak")
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -341,5 +343,6 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (handler != null) handler.removeCallbacksAndMessages(null);
     }
 }

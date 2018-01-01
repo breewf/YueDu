@@ -16,10 +16,10 @@ import com.ghy.yuedu.util.ColorUtil;
 import com.ghy.yuedu.util.SystemBarUtil;
 import com.lidroid.xutils.ViewUtils;
 import com.lidroid.xutils.view.annotation.ViewInject;
+import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import cn.bmob.v3.listener.SaveListener;
-import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class AdviceActivity extends AppCompatActivity {
 

@@ -4,6 +4,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <include layout="@layout/layout_main"></include>
+    <include layout="@layout/layout_main"/>
 
 </RelativeLayout>

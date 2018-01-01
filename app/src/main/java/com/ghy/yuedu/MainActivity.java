@@ -1,5 +1,6 @@
 package com.ghy.yuedu;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -54,6 +55,7 @@ import com.ghy.yuedu.util.SPUtil;
 import com.ghy.yuedu.util.SnackUtil;
 import com.larswerkman.holocolorpicker.ColorPicker;
 import com.larswerkman.holocolorpicker.SVBar;
+import com.ontbee.legacyforks.cn.pedant.SweetAlert.SweetAlertDialog;
 import com.readystatesoftware.systembartint.SystemBarTintManager;
 import com.rey.material.widget.SnackBar;
 import com.romainpiel.shimmer.Shimmer;
@@ -64,7 +66,6 @@ import java.util.ArrayList;
 import cn.bmob.push.BmobPush;
 import cn.bmob.v3.Bmob;
 import cn.bmob.v3.update.BmobUpdateAgent;
-import cn.pedant.SweetAlert.SweetAlertDialog;
 import it.neokree.materialtabs.MaterialTab;
 import it.neokree.materialtabs.MaterialTabHost;
 import it.neokree.materialtabs.MaterialTabListener;
@@ -72,6 +73,7 @@ import it.neokree.materialtabs.MaterialTabListener;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, MaterialTabListener {
 
+    @SuppressLint("StaticFieldLeak")
     public static MainActivity mainInstance;
 
     private DrawerLayout mDrawerLayout;
@@ -106,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mainInstance=this;
+        mainInstance = this;
 
         initView();
 
@@ -152,7 +154,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         netAvailable = NetWorkUtil.checkNetworkState(this);
         if (!netAvailable) {
             //网络不可用
-            SnackUtil.showSnackBarNetError(this,snack_bar, getAppThemeColor());
+            SnackUtil.showSnackBarNetError(this, snack_bar, getAppThemeColor());
         } else {
             //网络可用
             if (!NetWorkUtil.isWifi(this)) {
@@ -160,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 boolean onlyWifiConnect = SPUtil.getBooleanSP(this, Constant.SP_SETTING, Constant.NET_CONNECT_ONLY_WIFI);
                 if (onlyWifiConnect) {
                     onlyWifi = true;
-                    SnackUtil.onlyWifiConnect(this,snack_bar,getAppThemeColor());
+                    SnackUtil.onlyWifiConnect(this, snack_bar, getAppThemeColor());
                 } else {
                     onlyWifi = false;
                     if (!firstStart) {
@@ -283,7 +285,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         snack_bar = (SnackBar) findViewById(R.id.snack_bar);
-        layout_no_data_remind= (LinearLayout) findViewById(R.id.layout_no_data_remind);
+        layout_no_data_remind = (LinearLayout) findViewById(R.id.layout_no_data_remind);
 
     }
 
@@ -527,21 +529,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     /*
     * 服务器是否有当日数据提醒
     * */
-    public void setRemindTodayData(boolean isData){
-      if (isData){
-          layout_no_data_remind.setVisibility(View.GONE);
-      }else {
-          //图标提醒
-          layout_no_data_remind.setVisibility(View.VISIBLE);
-          //snackBar提醒
-          SnackUtil.noDataToday(snack_bar, getAppThemeColor());
-      }
+    public void setRemindTodayData(boolean isData) {
+        if (isData) {
+            layout_no_data_remind.setVisibility(View.GONE);
+        } else {
+            //图标提醒
+            layout_no_data_remind.setVisibility(View.VISIBLE);
+            //snackBar提醒
+            SnackUtil.noDataToday(snack_bar, getAppThemeColor());
+        }
     }
 
     /*
     * 监听屏幕是否双击
     * */
-    private DoubleClickListener doubleClickListener=new DoubleClickListener(new DoubleClickListener.OnDoubleClickListener() {
+    private DoubleClickListener doubleClickListener = new DoubleClickListener(new DoubleClickListener.OnDoubleClickListener() {
         @Override
         public void onDoubleClick() {
             //显示popupWindow
@@ -550,12 +552,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     });
 
     private PopupWindow popupWindow;
+
     private void showSetPopupWindow() {
         //导入布局文件
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.layout_popup_window,null);
+        View popupView = inflater.inflate(R.layout.layout_popup_window, null);
         //设置popupWindow的背景颜色
-        LinearLayout layout_popup_window= (LinearLayout) popupView.findViewById(R.id.layout_popup_window);
+        LinearLayout layout_popup_window = (LinearLayout) popupView.findViewById(R.id.layout_popup_window);
         layout_popup_window.setBackgroundColor(getAppThemeColor());
 
         popupWindow = new PopupWindow(popupView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -563,15 +566,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         popupWindow.setOutsideTouchable(true);
         popupWindow.setAnimationStyle(R.style.AnimationPopupWindow);
         popupWindow.showAtLocation(findViewById(R.id.main),
-                Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 0);
+                Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
     }
 
     /*
     * 更换背景点击事件
     * */
-    public void changeBgClick(View view){
-       int id = view.getId();
-        switch (id){
+    public void changeBgClick(View view) {
+        int id = view.getId();
+        switch (id) {
             case R.id.img_read_bg0:
                 //无样式
                 changeBgMethod(getResources().getColor(R.color.white));
@@ -636,9 +639,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
 
-        if(doubleClickListener == null) {
+        if (doubleClickListener == null) {
             return super.dispatchTouchEvent(event);
-        }else{
+        } else {
             doubleClickListener.dispatchTouchEvent(event);
         }
         return super.dispatchTouchEvent(event);
@@ -647,6 +650,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        mainInstance = null;
         unregisterReceiver(netWorkBroadCast);
     }
 }

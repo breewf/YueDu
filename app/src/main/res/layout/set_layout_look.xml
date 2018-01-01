@@ -18,13 +18,15 @@
             android:textColor="@color/gray4"
             android:textStyle="bold"
             android:text="查看设置"/>
-        <LinearLayout
+
+        <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="@dimen/margin_6"
             android:layout_marginLeft="@dimen/margin_10"
             android:layout_marginRight="@dimen/margin_10"
-            android:background="@color/gray2"></LinearLayout>
+            android:background="@color/gray2"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -43,13 +45,6 @@
             android:text="查看启动页"
             android:textColor="@color/gray4" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginLeft="@dimen/margin_14"
-            android:layout_marginRight="@dimen/margin_14"
-            android:background="@color/gray2"></View>
-
         <Button
             android:id="@+id/set_look_btn2"
             android:layout_width="match_parent"
@@ -59,13 +54,6 @@
             android:padding="@dimen/padding_14"
             android:text="查看引导页"
             android:textColor="@color/gray4" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginLeft="@dimen/margin_14"
-            android:layout_marginRight="@dimen/margin_14"
-            android:background="@color/gray2"></View>
 
         <Button
             android:id="@+id/set_look_btn3"

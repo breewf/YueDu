@@ -24,18 +24,18 @@ public class LeadActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lead);
 
-        btn_lead_startApp= (Button) findViewById(R.id.btn_lead_startApp);
+        btn_lead_startApp = (Button) findViewById(R.id.btn_lead_startApp);
 
-        int whereStartFlag=getIntent().getFlags();
-        if (whereStartFlag== Constant.START_FROM_SETTING) {
+        int whereStartFlag = getIntent().getIntExtra("comeFrom", 0);
+        if (whereStartFlag == Constant.START_FROM_SETTING) {
             //从设置项启动
             btn_lead_startApp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(LeadActivity.this,"您已开启，感谢有您",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LeadActivity.this, "您已开启，感谢有您", Toast.LENGTH_SHORT).show();
                 }
             });
-        }else {
+        } else {
             btn_lead_startApp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

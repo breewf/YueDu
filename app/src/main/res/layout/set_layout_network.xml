@@ -19,13 +19,15 @@
             android:textColor="@color/gray4"
             android:textStyle="bold"
             android:text="网络设置"/>
-        <LinearLayout
+
+        <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="@dimen/margin_6"
             android:layout_marginLeft="@dimen/margin_10"
             android:layout_marginRight="@dimen/margin_10"
-            android:background="@color/gray2"></LinearLayout>
+            android:background="@color/gray2"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -54,71 +56,8 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="@dimen/margin_10"
                 android:padding="@dimen/padding_14"/>
+
         </RelativeLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginLeft="@dimen/margin_14"
-            android:layout_marginRight="@dimen/margin_14"
-            android:background="@color/gray2"></View>
-
-        <RelativeLayout
-            android:id="@+id/set_net_layout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/layout_bg_selector_color1">
-
-            <TextView
-                android:id="@+id/set_net_tv2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/padding_14"
-                android:textSize="12sp"
-                android:layout_marginLeft="@dimen/margin_10"
-                android:textColor="@color/gray4"
-                android:text="视频仅WIFI联网"/>
-
-            <com.rey.material.widget.Switch
-                android:id="@+id/set_net_switch2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="@dimen/margin_10"
-                android:padding="@dimen/padding_14"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/set_net_layout3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/layout_bg_selector_color1">
-
-            <TextView
-                android:id="@+id/set_net_tv3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/padding_14"
-                android:textSize="12sp"
-                android:layout_marginLeft="@dimen/margin_10"
-                android:textColor="@color/gray4"
-                android:text="音乐仅WIFI联网"/>
-
-            <com.rey.material.widget.Switch
-                android:id="@+id/set_net_switch3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="@dimen/margin_10"
-                android:padding="@dimen/padding_14"/>
-        </RelativeLayout>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:layout_marginLeft="@dimen/margin_14"
-            android:layout_marginRight="@dimen/margin_14"
-            android:background="@color/gray2"></View>
 
         <Button
             android:id="@+id/set_btn_network1"

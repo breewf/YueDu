@@ -81,7 +81,7 @@ public class DayArticleFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        DAFInstance=this;
+        DAFInstance = this;
         initSwipeRefreshLayout();
 
         //先加载本地的期刊数，无网络时，使用本地的期刊数
@@ -129,10 +129,16 @@ public class DayArticleFragment extends Fragment {
                 }
                 if (isToday) {
                     //加载数据
-                    initData();
+                    initData(getDate);
                 } else {
-                    swipeRefreshLayout.setRefreshing(false);
-                    MainActivity.mainInstance.setRemindTodayData(false);
+                    //服务器没有今日数据，取最新的一期
+                    if (list.size() > 0) {
+                        DataDate dataDate = list.get(list.size() - 1);
+                        initData(dataDate.getDate());
+                    } else {
+                        swipeRefreshLayout.setRefreshing(false);
+                        MainActivity.mainInstance.setRemindTodayData(false);
+                    }
                 }
             }
 
@@ -144,7 +150,7 @@ public class DayArticleFragment extends Fragment {
 
     }
 
-    private void initData() {
+    private void initData(String getDate) {
         final BmobQuery<DayArticle> dayArticleQuery = new BmobQuery<>();
         dayArticleQuery.addWhereEqualTo("date", getDate);
         dayArticleQuery.findObjects(getActivity(), new FindListener<DayArticle>() {
@@ -317,7 +323,7 @@ public class DayArticleFragment extends Fragment {
     /*
   * 更换背景
   * */
-    public void changBg(int bgId){
+    public void changBg(int bgId) {
         layout_day_art.setBackgroundColor(bgId);
     }
 

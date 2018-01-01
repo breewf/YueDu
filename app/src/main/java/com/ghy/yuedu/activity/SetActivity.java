@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -38,17 +37,9 @@ public class SetActivity extends AppCompatActivity implements View.OnClickListen
 
     @ViewInject(R.id.set_net_layout1)
     RelativeLayout set_net_layout1;//仅WIFI联网
-    @ViewInject(R.id.set_net_layout2)
-    RelativeLayout set_net_layout2;//视频仅WIFI联网
-    @ViewInject(R.id.set_net_layout3)
-    RelativeLayout set_net_layout3;//音乐仅WIFI联网
 
     @ViewInject(R.id.set_net_switch1)
     Switch netSwitch1;//仅WIFI联网
-    @ViewInject(R.id.set_net_switch2)
-    Switch netSwitch2;//视频仅WIFI联网
-    @ViewInject(R.id.set_net_switch3)
-    Switch netSwitch3;//音乐仅WIFI联网
 
     @ViewInject(R.id.set_other_btn1)
     Button set_other_btn1;//关于
@@ -58,11 +49,6 @@ public class SetActivity extends AppCompatActivity implements View.OnClickListen
     Button set_other_btn3;//意见反馈
     @ViewInject(R.id.set_other_btn4)
     Button set_other_btn4;//给个好评
-
-    @ViewInject(R.id.set_app_layout1)
-    RelativeLayout set_app_layout1;//推送
-    @ViewInject(R.id.set_app_switch1)
-    Switch set_app_switch1;//推送
 
     @ViewInject(R.id.set_btn_app_set1)
     Button set_btn_app_set1;//检查更新
@@ -101,49 +87,21 @@ public class SetActivity extends AppCompatActivity implements View.OnClickListen
         //加载网络设置配置
         if (SPUtil.getBooleanSP(this, Constant.SP_SETTING, Constant.NET_CONNECT_ONLY_WIFI)) {
             netSwitch1.setChecked(true);
-            set_net_layout2.setVisibility(View.GONE);
-            set_net_layout3.setVisibility(View.GONE);
         } else {
             netSwitch1.setChecked(false);
         }
 
-        if (SPUtil.getBooleanSP(this, Constant.SP_SETTING, Constant.NET_CONNECT_ONLY_WIFI_VIDEO)) {
-            netSwitch2.setChecked(true);
-        } else {
-            netSwitch2.setChecked(false);
-        }
-
-        if (SPUtil.getBooleanSP(this, Constant.SP_SETTING, Constant.NET_CONNECT_ONLY_WIFI_MUSIC)) {
-            netSwitch3.setChecked(true);
-        } else {
-            netSwitch3.setChecked(false);
-        }
-
-        //加载推送设置配置
-        if (SPUtil.getPushSP(this, Constant.SP_SETTING, Constant.PUSH_SETTING)) {
-            set_app_switch1.setChecked(true);
-        } else {
-            set_app_switch1.setChecked(false);
-        }
     }
 
     private void initView() {
 
         set_net_layout1.setOnClickListener(this);
-        set_net_layout2.setOnClickListener(this);
-        set_net_layout3.setOnClickListener(this);
         netSwitch1.setOnClickListener(this);
-        netSwitch2.setOnClickListener(this);
-        netSwitch3.setOnClickListener(this);
-
 
         set_other_btn1.setOnClickListener(this);
         set_other_btn2.setOnClickListener(this);
         set_other_btn3.setOnClickListener(this);
         set_other_btn4.setOnClickListener(this);
-
-        set_app_layout1.setOnClickListener(this);
-        set_app_switch1.setOnClickListener(this);
 
         set_btn_network1.setOnClickListener(this);
 
@@ -192,64 +150,19 @@ public class SetActivity extends AppCompatActivity implements View.OnClickListen
             if (netSwitch1.isChecked()) {
                 netSwitch1.setChecked(false);
                 changeNetworkSet(Constant.NET_CONNECT_ONLY_WIFI, false);
-                set_net_layout2.setVisibility(View.VISIBLE);
-                set_net_layout3.setVisibility(View.VISIBLE);
-                startAnimShow(set_net_layout2,R.anim.view_show_translate_scale_from_top);
-                startAnimShow(set_net_layout3,R.anim.view_show_translate_scale_from_top);
                 sendNetConnectBroadcast();
             } else {
                 netSwitch1.setChecked(true);
                 changeNetworkSet(Constant.NET_CONNECT_ONLY_WIFI, true);
-                startAnimHide(set_net_layout2, R.anim.view_hide_translate_scale_to_left);
-                startAnimHide(set_net_layout3,R.anim.view_hide_translate_scale_to_left);
-                setLayoutHideDelay();
                 sendNetConnectBroadcast();
             }
-
         } else if (view == netSwitch1) {
             if (netSwitch1.isChecked()) {
                 changeNetworkSet(Constant.NET_CONNECT_ONLY_WIFI, true);
-                startAnimHide(set_net_layout2, R.anim.view_hide_translate_scale_to_right);
-                startAnimHide(set_net_layout3,R.anim.view_hide_translate_scale_to_right);
-                setLayoutHideDelay();
                 sendNetConnectBroadcast();
             } else {
                 changeNetworkSet(Constant.NET_CONNECT_ONLY_WIFI, false);
-                set_net_layout2.setVisibility(View.VISIBLE);
-                set_net_layout3.setVisibility(View.VISIBLE);
-                startAnimShow(set_net_layout2, R.anim.view_show_translate_scale_from_top);
-                startAnimShow(set_net_layout3,R.anim.view_show_translate_scale_from_top);
                 sendNetConnectBroadcast();
-            }
-        } else if (view == set_net_layout2) {
-            if (netSwitch2.isChecked()) {
-                netSwitch2.setChecked(false);
-                changeNetworkSet(Constant.NET_CONNECT_ONLY_WIFI_VIDEO, false);
-            } else {
-                netSwitch2.setChecked(true);
-                changeNetworkSet(Constant.NET_CONNECT_ONLY_WIFI_VIDEO, true);
-            }
-
-        } else if (view == netSwitch2) {
-            if (netSwitch2.isChecked()) {
-                changeNetworkSet(Constant.NET_CONNECT_ONLY_WIFI_VIDEO, true);
-            } else {
-                changeNetworkSet(Constant.NET_CONNECT_ONLY_WIFI_VIDEO, false);
-            }
-        } else if (view == set_net_layout3) {
-            if (netSwitch3.isChecked()) {
-                netSwitch3.setChecked(false);
-                changeNetworkSet(Constant.NET_CONNECT_ONLY_WIFI_MUSIC, false);
-            } else {
-                netSwitch3.setChecked(true);
-                changeNetworkSet(Constant.NET_CONNECT_ONLY_WIFI_MUSIC, true);
-            }
-
-        } else if (view == netSwitch3) {
-            if (netSwitch3.isChecked()) {
-                changeNetworkSet(Constant.NET_CONNECT_ONLY_WIFI_MUSIC, true);
-            } else {
-                changeNetworkSet(Constant.NET_CONNECT_ONLY_WIFI_MUSIC, false);
             }
         } else if (view == set_other_btn1) {
             //关于
@@ -263,25 +176,6 @@ public class SetActivity extends AppCompatActivity implements View.OnClickListen
         } else if (view == set_other_btn4) {
             //好评
             gotoMarket();
-
-        } else if (view == set_app_layout1) {
-            //推送
-            if (set_app_switch1.isChecked()) {
-                set_app_switch1.setChecked(false);
-                changePushSet(Constant.PUSH_SETTING, false);
-            } else {
-                set_app_switch1.setChecked(true);
-                changePushSet(Constant.PUSH_SETTING, true);
-                showToastLong("暂时没有推送功能，请放心使用！");
-            }
-        } else if (view == set_app_switch1) {
-            //推送
-            if (set_app_switch1.isChecked()) {
-                changePushSet(Constant.PUSH_SETTING, true);
-                showToastLong("暂时没有推送功能，请放心使用！");
-            } else {
-                changePushSet(Constant.PUSH_SETTING, false);
-            }
         } else if (view == set_btn_network1) {
             //打开系统WIFI设置
             setSysNetWork();
@@ -290,25 +184,24 @@ public class SetActivity extends AppCompatActivity implements View.OnClickListen
             int color = Color.parseColor(set_btn_app_set2.getTag().toString());
             SPUtil.saveSP(SetActivity.this, Constant.SP_SETTING, Constant.APP_THEME_COLOR, color);
             showToast("设置成功，重启生效");
-        } else if (view==set_btn_app_set3){
+        } else if (view == set_btn_app_set3) {
             //activity切换动画效果设置
-            startActivity(this,AnimSetActivity.class);
-
+            startActivity(this, AnimSetActivity.class);
         } else if (view == set_look_btn1) {
             //启动页
             Intent intent = new Intent(this, LaunchActivity.class);
-            intent.setFlags(Constant.START_FROM_SETTING);
+            intent.putExtra("comeFrom", Constant.START_FROM_SETTING);
             startActivity(intent);
             overridePendingTransition(getActivityInAnim(), R.anim.activity_alpha_out);
         } else if (view == set_look_btn2) {
             //引导页
             Intent intent = new Intent(this, LeadActivity.class);
-            intent.setFlags(Constant.START_FROM_SETTING);
+            intent.putExtra("comeFrom", Constant.START_FROM_SETTING);
             startActivity(intent);
             overridePendingTransition(getActivityInAnim(), R.anim.activity_alpha_out);
         } else if (view == set_look_btn3) {
             startActivity(this, TestActivity.class);
-        }else if (view==set_btn_app_set1){
+        } else if (view == set_btn_app_set1) {
             //检查更新
             checkUpdate();
         }
@@ -318,11 +211,11 @@ public class SetActivity extends AppCompatActivity implements View.OnClickListen
     * 检查更新
     * */
     private void checkUpdate() {
-        if (NetWorkUtil.checkNetworkState(this)){
+        if (NetWorkUtil.checkNetworkState(this)) {
             //网络可用检查更新
             showToast("正在检查更新");
             BmobUpdateAgent.forceUpdate(this);
-        }else {
+        } else {
             showToast("无网络连接");
         }
     }
@@ -331,8 +224,8 @@ public class SetActivity extends AppCompatActivity implements View.OnClickListen
     * 去电子市场好评
     * */
     private void gotoMarket() {
-        Uri uri = Uri.parse("market://details?id="+getPackageName());
-        Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+        Uri uri = Uri.parse("market://details?id=" + getPackageName());
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
@@ -345,27 +238,14 @@ public class SetActivity extends AppCompatActivity implements View.OnClickListen
         sendBroadcast(mIntent);
     }
 
-    private void startAnimShow(View view,int animStyle){
-        Animation anim = AnimationUtils.loadAnimation(this,animStyle);
-        view.startAnimation(anim);
-    }
-
-    private void startAnimHide(final View view,int animStyle){
+    private void startAnimShow(View view, int animStyle) {
         Animation anim = AnimationUtils.loadAnimation(this, animStyle);
         view.startAnimation(anim);
     }
 
-    /*
-    * 加载动画，延迟消失
-    * */
-    private void setLayoutHideDelay(){
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                set_net_layout2.setVisibility(View.GONE);
-                set_net_layout3.setVisibility(View.GONE);
-            }
-        }, 600);
+    private void startAnimHide(final View view, int animStyle) {
+        Animation anim = AnimationUtils.loadAnimation(this, animStyle);
+        view.startAnimation(anim);
     }
 
     /*

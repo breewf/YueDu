@@ -139,10 +139,16 @@ public class DayPictureFragment extends Fragment implements View.OnClickListener
                 }
                 if (isToday) {
                     //加载数据
-                    initData();
+                    initData(getDate);
                 } else {
-                    swipeRefreshLayout.setRefreshing(false);
-                    MainActivity.mainInstance.setRemindTodayData(false);
+                    //服务器没有今日数据，取最新的一期
+                    if (list.size() > 0) {
+                        DataDate dataDate = list.get(list.size() - 1);
+                        initData(dataDate.getDate());
+                    } else {
+                        swipeRefreshLayout.setRefreshing(false);
+                        MainActivity.mainInstance.setRemindTodayData(false);
+                    }
                 }
             }
 
@@ -154,7 +160,7 @@ public class DayPictureFragment extends Fragment implements View.OnClickListener
 
     }
 
-    private void initData() {
+    private void initData(String getDate) {
         final BmobQuery<DayPicture> dayPictureQuery = new BmobQuery<>();
         dayPictureQuery.addWhereEqualTo("date", getDate);
         dayPictureQuery.findObjects(getActivity(), new FindListener<DayPicture>() {

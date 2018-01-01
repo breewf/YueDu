@@ -35,7 +35,7 @@ public class LaunchActivity extends Activity {
 
         shimmer = new Shimmer().setStartDelay(400).setDuration(4000);
 
-        int whereStartFlag = getIntent().getFlags();
+        int whereStartFlag = getIntent().getIntExtra("comeFrom", 0);
         if (whereStartFlag == Constant.START_FROM_SETTING) {
             //从设置项启动
             tv_launch_each_start.setText(Quotations.sentences[RandomNumber()]);

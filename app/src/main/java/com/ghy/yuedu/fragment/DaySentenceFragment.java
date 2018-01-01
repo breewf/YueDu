@@ -81,7 +81,7 @@ public class DaySentenceFragment extends Fragment {
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        DSFInstance=this;
+        DSFInstance = this;
         initSwipeRefreshLayout();
 
         //先加载本地的期刊数，无网络时，使用本地的期刊数
@@ -128,10 +128,16 @@ public class DaySentenceFragment extends Fragment {
                 }
                 if (isToday) {
                     //加载数据
-                    initData();
+                    initData(getDate);
                 } else {
-                    swipeRefreshLayout.setRefreshing(false);
-                    MainActivity.mainInstance.setRemindTodayData(false);
+                    //服务器没有今日数据，取最新的一期
+                    if (list.size() > 0) {
+                        DataDate dataDate = list.get(list.size() - 1);
+                        initData(dataDate.getDate());
+                    } else {
+                        swipeRefreshLayout.setRefreshing(false);
+                        MainActivity.mainInstance.setRemindTodayData(false);
+                    }
                 }
             }
 
@@ -143,7 +149,7 @@ public class DaySentenceFragment extends Fragment {
 
     }
 
-    private void initData() {
+    private void initData(String getDate) {
         final BmobQuery<DaySentence> daySentenceQuery = new BmobQuery<>();
         daySentenceQuery.addWhereEqualTo("date", getDate);
         daySentenceQuery.findObjects(getActivity(), new FindListener<DaySentence>() {
@@ -314,7 +320,7 @@ public class DaySentenceFragment extends Fragment {
     /*
     * 更换背景
     * */
-    public void changBg(int bgId){
+    public void changBg(int bgId) {
         layout_day_sen.setBackgroundColor(bgId);
     }
 

@@ -163,12 +163,18 @@ public class DayRecommendFragment extends Fragment implements View.OnClickListen
                 }
                 if (isToday) {
                     //加载数据
-                    initData();
+                    initData(getDate);
                 } else {
-                    //服务器无数据提示
-                    swipeRefreshLayout.setRefreshing(false);
-                    MainActivity.mainInstance.setRemindTodayData(false);
-                    MyLoadingDialog.dismissLoadingDialog();
+                    //服务器没有今日数据，取最新的一期
+                    if (list.size() > 0) {
+                        DataDate dataDate = list.get(list.size() - 1);
+                        initData(dataDate.getDate());
+                    } else {
+                        //服务器无数据提示
+                        swipeRefreshLayout.setRefreshing(false);
+                        MainActivity.mainInstance.setRemindTodayData(false);
+                        MyLoadingDialog.dismissLoadingDialog();
+                    }
                 }
             }
 
@@ -182,7 +188,7 @@ public class DayRecommendFragment extends Fragment implements View.OnClickListen
     /*
     * 加载数据
     * */
-    private void initData() {
+    private void initData(String getDate) {
         BmobQuery<DayRecommend> dayRecommendQuery = new BmobQuery<>();
         dayRecommendQuery.addWhereEqualTo("date", getDate);
         dayRecommendQuery.findObjects(getActivity(), new FindListener<DayRecommend>() {

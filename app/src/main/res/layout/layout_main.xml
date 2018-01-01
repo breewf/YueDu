@@ -11,7 +11,7 @@
         android:orientation="vertical">
 
 
-        <include layout="@layout/toolbar"></include>
+        <include layout="@layout/toolbar"/>
 
         <android.support.v4.widget.DrawerLayout
             android:id="@+id/drawer_layout"
@@ -77,7 +77,7 @@
                 android:layout_gravity="start"
                 android:background="@android:color/white">
 
-                <include layout="@layout/layout_drawer_layout"></include>
+                <include layout="@layout/layout_drawer_layout"/>
 
             </RelativeLayout>
 
@@ -86,7 +86,7 @@
     </LinearLayout>
 
     <!-- 底部snack_bar提示信息布局-->
-    <include layout="@layout/layout_snack_bar"></include>
+    <include layout="@layout/layout_snack_bar"/>
 
 </RelativeLayout>
 
